@@ -45,3 +45,10 @@ Route::get('/changePassword/{token}', [ LoginController::class, 'changePassword'
 Route::post('/changePassword/{token}', [ LoginController::class, 'changePasswordPost' ]);
 Route::get('/stack', [ SystemController::class, 'stack' ]);
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
