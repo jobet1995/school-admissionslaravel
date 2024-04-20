@@ -5170,9 +5170,28 @@ module.exports = {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+/* harmony import */ var _components_Example__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Example */ "./resources/js/components/Example.jsx");
+/* harmony import */ var _components_Example__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_Example__WEBPACK_IMPORTED_MODULE_1__);
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes React and other helpers. It's a great starting point while
+ * building robust, powerful web applications using React + Laravel.
+ */
+
+
+
+/**
+ * Next, we will create a fresh React component instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+
+
 
 /***/ }),
 
@@ -5220,6 +5239,16 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
 //     enabledTransports: ['ws', 'wss'],
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/Example.jsx":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Example.jsx ***!
+  \*********************************************/
+/***/ (() => {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /home/runner/school-admissions/resources/js/components/Example.jsx: Support for the experimental syntax 'jsx' isn't currently enabled (6:9):\n\n\u001b[0m \u001b[90m 4 |\u001b[39m \u001b[36mfunction\u001b[39m \u001b[33mExample\u001b[39m() {\n \u001b[90m 5 |\u001b[39m     \u001b[36mreturn\u001b[39m (\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 |\u001b[39m         \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"container\"\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m   |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 7 |\u001b[39m             \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"row justify-content-center\"\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 8 |\u001b[39m                 \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"col-md-8\"\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 9 |\u001b[39m                     \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"card\"\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\nAdd @babel/preset-react (https://github.com/babel/babel/tree/main/packages/babel-preset-react) to the 'presets' section of your Babel config to enable transformation.\nIf you want to leave it as-is, add @babel/plugin-syntax-jsx (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-jsx) to the 'plugins' section to enable parsing.\n\nIf you already added the plugin for this syntax to your config, it's possible that your config isn't being loaded.\nYou can re-run Babel with the BABEL_SHOW_CONFIG_FOR environment variable to show the loaded configuration:\n\tnpx cross-env BABEL_SHOW_CONFIG_FOR=/home/runner/school-admissions/resources/js/components/Example.jsx <your build command>\nSee https://babeljs.io/docs/configuration#print-effective-configs for more info.\n\n    at constructor (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:353:19)\n    at Parser.raise (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:3277:19)\n    at Parser.expectOnePlugin (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:3311:18)\n    at Parser.parseExprAtom (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:10935:18)\n    at Parser.parseExprSubscripts (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:10590:23)\n    at Parser.parseUpdate (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:10573:21)\n    at Parser.parseMaybeUnary (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:10551:23)\n    at Parser.parseMaybeUnaryOrPrivate (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:10405:61)\n    at Parser.parseExprOps (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:10410:23)\n    at Parser.parseMaybeConditional (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:10387:23)\n    at Parser.parseMaybeAssign (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:10348:21)\n    at /home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:10318:39\n    at Parser.allowInAnd (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:11936:12)\n    at Parser.parseMaybeAssignAllowIn (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:10318:17)\n    at Parser.parseParenAndDistinguishExpression (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:11199:28)\n    at Parser.parseExprAtom (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:10857:23)\n    at Parser.parseExprSubscripts (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:10590:23)\n    at Parser.parseUpdate (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:10573:21)\n    at Parser.parseMaybeUnary (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:10551:23)\n    at Parser.parseMaybeUnaryOrPrivate (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:10405:61)\n    at Parser.parseExprOps (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:10410:23)\n    at Parser.parseMaybeConditional (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:10387:23)\n    at Parser.parseMaybeAssign (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:10348:21)\n    at Parser.parseExpressionBase (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:10302:23)\n    at /home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:10298:39\n    at Parser.allowInAnd (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:11931:16)\n    at Parser.parseExpression (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:10298:17)\n    at Parser.parseReturnStatement (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:12619:28)\n    at Parser.parseStatementContent (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:12270:21)\n    at Parser.parseStatementLike (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:12239:17)\n    at Parser.parseStatementListItem (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:12219:17)\n    at Parser.parseBlockOrModuleBlockBody (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:12796:61)\n    at Parser.parseBlockBody (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:12789:10)\n    at Parser.parseBlock (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:12777:10)\n    at Parser.parseFunctionBody (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:11616:24)\n    at Parser.parseFunctionBodyAndFinish (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:11602:10)\n    at /home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:12919:12\n    at Parser.withSmartMixTopicForbiddingContext (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:11913:14)\n    at Parser.parseFunction (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:12918:10)\n    at Parser.parseFunctionStatement (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:12602:17)\n    at Parser.parseStatementContent (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:12263:21)\n    at Parser.parseStatementLike (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:12239:17)\n    at Parser.parseModuleItem (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:12216:17)\n    at Parser.parseBlockOrModuleBlockBody (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:12796:36)\n    at Parser.parseBlockBody (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:12789:10)\n    at Parser.parseProgram (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:12116:10)\n    at Parser.parseTopLevel (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:12106:25)\n    at Parser.parse (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:13905:10)\n    at parse (/home/runner/school-admissions/node_modules/@babel/parser/lib/index.js:13947:38)\n    at parser (/home/runner/school-admissions/node_modules/@babel/core/lib/parser/index.js:41:34)");
 
 /***/ }),
 

@@ -6,18 +6,18 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Util;
-use App\Models\AdmissionDecision;
+use App\Models\Applications;
 
-class AdmissionDecisionController extends Controller {
+class ApplicationsController extends Controller {
 
     public function index()
     {
         $size = request()->input('size') ? request()->input('size') : 10;
-        $sort = request()->input('sort') ? request()->input('sort') : 'AdmissionDecision.rec_id';
+        $sort = request()->input('sort') ? request()->input('sort') : 'Applications.application_id';
         $sortDirection = request()->input('sort') ? (request()->input('desc') ? 'desc' : 'asc') : 'asc';
         $column = request()->input('sc');
-        $query = AdmissionDecision::query()
-            ->select('AdmissionDecision.rec_id', 'AdmissionDecision.application', 'AdmissionDecision.decision_date', 'AdmissionDecision.decision')
+        $query = Applications::query()
+            ->select('Applications.application_id', 'Applications.student', 'Applications.course', 'Applications.application_date', 'Applications.status')
             ->orderBy($sort, $sortDirection);
         if (Util::IsInvalidSearch($query->getQuery()->columns, $column)) {
             abort(403);
@@ -25,7 +25,7 @@ class AdmissionDecisionController extends Controller {
         if (request()->input('sw')) {
             $search = request()->input('sw');
             $operator = Util::getOperator(request()->input('so'));
-            if ($column == 'AdmissionDecision.decision_date') {
+            if ($column == 'Applications.application_date') {
                 $search = Util::formatDateStr($search, 'date');
             }
             if ($operator == 'like') {
@@ -33,64 +33,66 @@ class AdmissionDecisionController extends Controller {
             }
             $query->where($column, $operator, $search);
         }
-        $admissionDecisions = $query->paginate($size);
-        return view('admissionDecisions.index', ['admissionDecisions' => $admissionDecisions]);
+        $applicationses = $query->paginate($size);
+        return view('applicationses.index', ['applicationses' => $applicationses]);
     }
 
     public function create()
     {
-        return view('admissionDecisions.create', ['ref' => Util::getRef('/admissionDecisions')]);
+        return view('applicationses.create', ['ref' => Util::getRef('/applicationses')]);
     }
 
     public function store()
     {
         Util::setRef();
         $this->validate(request(), [
-            'decision' => 'max:50'
+            'status' => 'max:50'
         ]);
-        AdmissionDecision::create([
-            'application' => request()->input('application'),
-            'decision_date' => Util::getDate(request()->input('decision_date')),
-            'decision' => request()->input('decision')
+        Applications::create([
+            'student' => request()->input('student'),
+            'course' => request()->input('course'),
+            'application_date' => Util::getDate(request()->input('application_date')),
+            'status' => request()->input('status')
         ]);
         return redirect(request()->query->get('ref'));
     }
 
-    public function show($rec_id)
+    public function show($application_id)
     {
-        $admissionDecision = AdmissionDecision::query()
-            ->select('AdmissionDecision.rec_id', 'AdmissionDecision.application', 'AdmissionDecision.decision_date', 'AdmissionDecision.decision')
-            ->where('AdmissionDecision.rec_id', $rec_id)
+        $applications = Applications::query()
+            ->select('Applications.application_id', 'Applications.student', 'Applications.course', 'Applications.application_date', 'Applications.status')
+            ->where('Applications.application_id', $application_id)
             ->first();
-        return view('admissionDecisions.show', ['admissionDecision' => $admissionDecision, 'ref' => Util::getRef('/admissionDecisions')]);
+        return view('applicationses.show', ['applications' => $applications, 'ref' => Util::getRef('/applicationses')]);
     }
 
-    public function edit($rec_id)
+    public function edit($application_id)
     {
-        $admissionDecision = AdmissionDecision::query()
-            ->select('AdmissionDecision.rec_id', 'AdmissionDecision.application', 'AdmissionDecision.decision_date', 'AdmissionDecision.decision')
-            ->where('AdmissionDecision.rec_id', $rec_id)
+        $applications = Applications::query()
+            ->select('Applications.application_id', 'Applications.student', 'Applications.course', 'Applications.application_date', 'Applications.status')
+            ->where('Applications.application_id', $application_id)
             ->first();
-        return view('admissionDecisions.edit', ['admissionDecision' => $admissionDecision, 'ref' => Util::getRef('/admissionDecisions')]);
+        return view('applicationses.edit', ['applications' => $applications, 'ref' => Util::getRef('/applicationses')]);
     }
 
-    public function update($rec_id)
+    public function update($application_id)
     {
         Util::setRef();
         $this->validate(request(), [
-            'decision' => 'max:50'
+            'status' => 'max:50'
         ]);
-        AdmissionDecision::find($rec_id)->update([
-            'application' => request()->input('application'),
-            'decision_date' => Util::getDate(request()->input('decision_date')),
-            'decision' => request()->input('decision')
+        Applications::find($application_id)->update([
+            'student' => request()->input('student'),
+            'course' => request()->input('course'),
+            'application_date' => Util::getDate(request()->input('application_date')),
+            'status' => request()->input('status')
         ]);
         return redirect(request()->query->get('ref'));
     }
 
-    public function destroy($rec_id)
+    public function destroy($application_id)
     {
-        AdmissionDecision::find($rec_id)->delete();
+        Applications::find($application_id)->delete();
         return back();
     }
 }
