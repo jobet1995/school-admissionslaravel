@@ -1,4 +1,11 @@
 FROM php:8.2-cli
+FROM mysql:8.0
+
+ENV MYSQL_ROOT_PASSWORD=root
+
+ENV MYSQL_DATABASE=mydatabase
+
+COPY init.sql /docker-entrypoint-initdb.d/
 
 RUN apt-get update -y && apt-get install -y libmcrypt-dev
 
