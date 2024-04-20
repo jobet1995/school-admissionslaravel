@@ -1,0 +1,21 @@
+      version: '3.7'
+
+      services:
+        php:
+          build: 
+            context: .
+            dockerfile: Dockerfile
+          ports:
+            - "8000:8000"
+          volumes:
+            - .:/var/www/html
+          depends_on:
+            - mysql
+
+        mysql:
+          image: mysql:8.0
+          environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: mydatabase
+          volumes:
+            - ./init.sql:/docker-entrypoint-initdb.d/init.sql
