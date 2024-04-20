@@ -9,9 +9,6 @@ WORKDIR /var/www/html
 # Copy application files
 COPY . /var/www/html
 
-# Install PHP dependencies
-RUN composer install
-
 # Expose port
 EXPOSE 8000
 
