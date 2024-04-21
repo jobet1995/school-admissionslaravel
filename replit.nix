@@ -1,5 +1,6 @@
 { pkgs }: {
 	deps = [
+   pkgs.sqlite
    pkgs.python38Packages.mysql-connector
    pkgs.mysql2pgsql
    pkgs.mysql57
